@@ -3,9 +3,9 @@
 class Conexao
 {
       private $servidor_mysql = 'localhost';
-      private $nome_banco = 'livraria';
-      private $usuario = 'root';
-      private $senha = '';
+      private $nome_banco = 'git_data';
+      private $usuario = 'gabriel';
+      private $senha = 'Thudor95';
       private $con;
 
       public function getConexao()
