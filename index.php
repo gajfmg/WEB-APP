@@ -34,22 +34,58 @@
 <div class="container">
     
         <?php
-            $repositorio = new Repositorios();
-            
-            
+         $repositorio = new Repositorios();
+         $gerente = new Gerentes();
+         $desenvolvedor = new Desenvolvedores();
+   
             if(isset($_POST['cadastrar'])):
                 
-          
-            $ds_repo_proj = $_POST['txt_repo'];
+                $cargo=$_POST['cargo'];
+           
             
-            $repositorio->setDs_repo_proj($ds_repo_proj);
-                        
-            if ($repositorio->insert()){
-                
-                echo "inserido com sucesso!";
-            }
+               if($cargo=='desenvolvedor'){
+                   
+                  
+                    
+                    $sk_desenv = $_POST['txt_codigo_pessoal'];
+                    $nm_desenv = $_POST['txt_nome'];
+                    
+                    $sk_repo_proj = $_POST['txt_sk_repo_proj'];
+                    $ds_repo_proj = $_POST['txt_repo'];
             
-         endif; 
+            
+                    $desenvolvedor->setNm_desenv($nm_desenv);
+                    $desenvolvedor->setSk_desenv($sk_desenv);
+             
+                    $repositorio->setSk_repo_proj($sk_repo_proj);
+                    $repositorio->setDs_repo_proj($ds_repo_proj);
+                    
+                    $repositorio->insert();
+                    $desenvolvedor->insert();
+               
+               } 
+               if($cargo=='gerente') {
+                   
+                    
+                    $sk_grnte_proj = $_POST['txt_codigo_pessoal'];
+                    $nm_grnte_proj = $_POST['txt_nome'];
+                    
+                    $sk_repo_proj = $_POST['txt_sk_repo_proj'];
+                    $ds_repo_proj = $_POST['txt_repo'];
+            
+            
+                    $gerente->setNm_grnte_proj($nm_grnte_proj);
+                    $gerente->setSk_grnte_proj($sk_grnte_proj);
+             
+                    $repositorio->setSk_repo_proj($sk_repo_proj);
+                    $repositorio->setDs_repo_proj($ds_repo_proj);
+                   
+                    $repositorio->insert();
+                    $gerente->insert();
+               }
+              
+                      
+             endif;  
           
         ?>
     
@@ -73,6 +109,10 @@
         <input type="text" name="txt_nome" placeholder="Nome Completo"/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div>
+      <div class="input-group input-group-icon">
+        <input type="text" name="txt_codigo_pessoal" placeholder="Código Pessoal"/>
+        <div class="input-icon"><i class="fa fa-user"></i></div>
+      </div>
        <h4>Cargo</h4>
       <div class="input-group">
         <input type="radio" name="cargo" value="gerente" id="payment-method-card" checked="true"/>
@@ -82,26 +122,17 @@
       </div>
        
       <div class="input-group input-group-icon">
+        <input type="text" name="txt_sk_repo_proj" placeholder="ID do Repositório"/>
+        <div class="input-icon"><i class="fab fa-slack"></i></div>
+      </div>
+       
+       <div class="input-group input-group-icon">
         <input type="text" name="txt_repo" placeholder="Nome do Repositório"/>
         <div class="input-icon"><i class="fa fa-archive"></i></div>
       </div>
      
     </div>
-    <div class="row">
-    
-        <h4>Data</h4>
-        <div class="input-group">
-          <div class="col-third">
-            <input type="text" placeholder="DD"/>
-          </div>
-          <div class="col-third">
-            <input type="text" placeholder="MM"/>
-          </div>
-          <div class="col-third">
-            <input type="text" placeholder="AAAA"/>
-          </div>
-        </div>
-    </div>
+   
         <input type="submit" name="cadastrar" class="botao" value="Cadastrar dados">
     </form>
     
@@ -109,9 +140,11 @@
         <table class="table table-hover">
             <thead>
 				<tr>
-                                        <th>ID do repositório:</th>
-					<th>Nome do repositório:</th>
-                                        <th>Ações:</th>
+                                      
+                                    <th>ID do repositório</th>	
+                                    <th>Nome do repositório</th>
+                                   
+                                    <th>Ações:</th>
                                 </tr>
             </thead>
 			
@@ -119,9 +152,9 @@
 
 			<tbody>
 				<tr>
-					
                                     <td><?php echo $value->sk_repo_proj; ?></td>
                                     <td><?php echo $value->ds_repo_proj; ?></td>
+                                   
 					
 					<td>
                                         	<?php echo "<a href='index.php?acao=deletar&sk_repo_proj=" . $value->sk_repo_proj . "' onclick='return confirm(\"Deseja realmente deletar?\")'>Deletar</a>"; ?>
