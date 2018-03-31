@@ -21,6 +21,7 @@ class Repositorios extends Crud{
       }
    
       public function getSk_repo_proj() {
+          
         return $this->sk_repo_proj;
       }
     
@@ -36,4 +37,5 @@ class Repositorios extends Crud{
         
       
 }
+
 

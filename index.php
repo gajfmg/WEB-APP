@@ -18,6 +18,7 @@
             $repositorio = new Repositorios();
             $gerente = new Gerentes();
             $desenvolvedor = new Desenvolvedores();
+            $repo_grnte = new Repositorio_gerente();
             
                if(isset($_POST['cadastrar'])):
                    
@@ -60,9 +61,14 @@
                 
                        $repositorio->setSk_repo_proj($sk_repo_proj);
                        $repositorio->setDs_repo_proj($ds_repo_proj);
+                       
+                       $repo_grnte->setSk_repo_proj($sk_repo_proj);
+                       $repo_grnte->setSk_grnte_proj($sk_grnte_proj);
                       
                        $repositorio->insert();
                        $gerente->insert();
+                       $repo_grnte->insert();
+                       
                   }
                  
                          
