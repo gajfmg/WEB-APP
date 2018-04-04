@@ -117,7 +117,7 @@
                <tr>
                   <th>ID do repositório</th>
                   <th>Nome do repositório</th>
-                  <th>Ações:</th>
+              <!--    <th>Ações:</th> -->
                </tr>
             </thead>
             <?php foreach($repositorio->findAll() as $key => $value): ?>
@@ -126,7 +126,7 @@
                   <td><?php echo $value->sk_repo_proj; ?></td>
                   <td><?php echo $value->ds_repo_proj; ?></td>
                   <td>
-                     <?php echo "<a href='index.php?acao=deletar&sk_repo_proj=" . $value->sk_repo_proj . "' onclick='return confirm(\"Deseja realmente deletar?\")'>Deletar</a>"; ?>
+                     <?php //echo "<a href='index.php?acao=deletar&sk_repo_proj=" . $value->sk_repo_proj . "' onclick='return confirm(\"Deseja realmente deletar?\")'>Deletar</a>"; ?>
                   </td>
                </tr>
             </tbody>
