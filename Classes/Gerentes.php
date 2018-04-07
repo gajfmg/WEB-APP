@@ -26,11 +26,22 @@ class Gerentes extends Crud{
       }
     
       public function insert(){
+          $sql = "select * from $this->table where sk_grnte_proj = :sk_grnte_proj";
+          $stmt = DB::prepare($sql);
+          $stmt->bindParam(':sk_grnte_proj', $this->sk_grnte_proj);
+          $stmt->execute();
+          $stmt->fetchAll();
+          $retorno = $stmt->rowCount();
+          
+          if($retorno == 0){
+      
           $sql = "insert into $this->table (sk_grnte_proj,nm_grnte_proj) values (:sk_grnte_proj,:nm_grnte_proj)";
           $stmt = DB::prepare($sql);
           $stmt->bindParam(':sk_grnte_proj', $this->sk_grnte_proj);
           $stmt->bindParam(':nm_grnte_proj', $this->nm_grnte_proj);
           return $stmt->execute();
+}
+        
          
       }
 }   

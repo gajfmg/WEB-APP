@@ -26,6 +26,16 @@ class Repositorios extends Crud{
       }
     
       public function insert(){
+          
+          $sql = "select * from $this->table where sk_repo_proj = :sk_repo_proj";
+          $stmt = DB::prepare($sql);
+          $stmt->bindParam(':sk_repo_proj', $this->sk_repo_proj);
+          $stmt->execute();
+          $stmt->fetchAll();
+          $retorno = $stmt->rowCount();
+          
+          if($retorno == 0){
+          
           $sql = "insert into $this->table (sk_repo_proj,ds_repo_proj) values (:sk_repo_proj,:ds_repo_proj)";
           $stmt = DB::prepare($sql);
           $stmt->bindParam(':sk_repo_proj', $this->sk_repo_proj);
@@ -38,4 +48,4 @@ class Repositorios extends Crud{
       
 }
 
-
+}
