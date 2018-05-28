@@ -240,3 +240,25 @@ select option {
 	position:relative;
 	top:1px;
 }
+.links {
+  background-color: #004eff;
+  box-shadow: 0 5px 0 #007eff;
+  color: white;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 14px 25px;
+  display: flex;
+    justify-content: center;
+}
+
+.links:hover {
+  background-color: #007eff;
+  cursor: pointer;
+}
+
+.links:active {
+  box-shadow: none;
+  top: 5px;
+}

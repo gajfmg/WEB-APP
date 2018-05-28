@@ -10,7 +10,7 @@
       <title>Projeto</title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
       <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-      <link rel="stylesheet" href="View/css/style.css">
+      <link rel="stylesheet" type="text/css" href="View/css/style.css">
    </head>
    <body>
       <div class="container">
@@ -85,7 +85,7 @@
                       ?>
          <form method="post" action="">
             <div class="row">
-               <h4>WEB APP Repositório</h4>
+               <h4>Controle WEB</h4>
                <div class="input-group input-group-icon">
                   <input type="text" name="txt_nome" placeholder="Nome Completo"/>
                   <div class="input-icon"><i class="fa fa-user"></i></div>
@@ -129,10 +129,20 @@
                      <?php //echo "<a href='index.php?acao=deletar&sk_repo_proj=" . $value->sk_repo_proj . "' onclick='return confirm(\"Deseja realmente deletar?\")'>Deletar</a>"; ?>
                   </td>
                </tr>
+             
             </tbody>
             <?php endforeach; ?>
+                     
          </table>
+          <div class="input-group">
+           <a class="links" href="https://app.powerbi.com/view?r=eyJrIjoiNzQ5OGUyMDYtMTU3OS00MzZkLWIyZTItNThkYmYwNDFjMzUyIiwidCI6IjEwNGZhNGI4LTg1MmYtNDBiZC1hZTkwLTdhNWIzMGRiOWFlNSJ9
+            " target="_blank">DashBoard</a><br>
+          </div>
+    
+              
+
       </div>
+    
       </div>
    </body>
 </html>
