@@ -135,8 +135,8 @@
                      
          </table>
           <div class="input-group">
-           <a class="links" href="https://app.powerbi.com/view?r=eyJrIjoiNzQ5OGUyMDYtMTU3OS00MzZkLWIyZTItNThkYmYwNDFjMzUyIiwidCI6IjEwNGZhNGI4LTg1MmYtNDBiZC1hZTkwLTdhNWIzMGRiOWFlNSJ9
-            " target="_blank">DashBoard</a><br>
+           <a class="links">DashBoard</a><br>
+           <iframe width="800" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiN2Y2MTRhNGYtYjcwOS00MmVmLWE5ZjgtZmYxMWUzY2I3MDI0IiwidCI6IjEwNGZhNGI4LTg1MmYtNDBiZC1hZTkwLTdhNWIzMGRiOWFlNSJ9" frameborder="0" allowFullScreen="true"></iframe>
           </div>
     
               
